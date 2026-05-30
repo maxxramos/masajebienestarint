@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masajes Bienestar Integral — Alejandro Hernández</title>
+    <meta name="description" content="Masajes terapéuticos, deportivos, entrenamiento personal, coaching deportivo y kinesiología en Las Toscas, Canelones, Uruguay.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <img src="img/logo.png" alt="Masajes Bienestar Integral">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="inicio">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="img/masaje.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <img src="img/logohero.png" alt="Masajes Bienestar Integral" class="hero-logo">
+            <a href="https://wa.me/59899923605" target="_blank" rel="noopener noreferrer" class="btn-hero">
+                <i class="fa-brands fa-whatsapp"></i> Agendá tu reserva
+            </a>
+        </div>
+    </section>
+
+    <!-- ======================== SERVICIOS ======================== -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nuestros Servicios</h2>
+                <p>Profesionalismo y dedicación para tu bienestar integral</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card reveal" data-service="entrenador_personal">
+                    <div class="service-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Entrenador Personal</h3>
+                    <p class="service-short">Planes de entrenamiento 100% personalizados para alcanzar tus objetivos físicos.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="masaje_terapeutico">
+                    <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+                    <h3>Masaje Terapéutico</h3>
+                    <p class="service-short">Alivio profundo de contracturas, dolores musculares y tensiones acumuladas.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="masaje_deportivo">
+                    <div class="service-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <h3>Masaje Deportivo</h3>
+                    <p class="service-short">Preparación y recuperación muscular óptima para el deportista de alto rendimiento.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="entrenador_futbol">
+                    <div class="service-icon"><i class="fa-solid fa-futbol"></i></div>
+                    <h3>Entrenador Fútbol Lic. Pro</h3>
+                    <p class="service-short">Metodología profesional para el desarrollo técnico y táctico de jugadores.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="coaching_deportivo">
+                    <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Coaching Deportivo</h3>
+                    <p class="service-short">Potenciá tu rendimiento trabajando la mente, la motivación y el foco deportivo.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="kinesiologo">
+                    <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
+                    <h3>Kinesiólogo Deportivo</h3>
+                    <p class="service-short">Diagnóstico, tratamiento y rehabilitación de lesiones musculares y articulares.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="quiropractico">
+                    <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                    <h3>Quiropráctico</h3>
+                    <p class="service-short">Ajustes vertebrales y articulares para aliviar el dolor y mejorar tu postura.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== MODAL SERVICIOS ======================== -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose" aria-label="Cerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 id="modalTitle"></h3>
+            <div class="modal-desc" id="modalDesc"></div>
+            <a href="https://wa.me/59899923605" target="_blank" rel="noopener noreferrer" class="btn-primary modal-cta">
+                <i class="fa-brands fa-whatsapp"></i> Consultar
+            </a>
+        </div>
+    </div>
+
+    <!-- ======================== NOSOTROS ======================== -->
+    <section class="section section-alt" id="nosotros">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nosotros</h2>
+                <p>Conocé al profesional detrás de cada sesión</p>
+            </div>
+
+            <div class="about-content reveal">
+                <div class="about-avatar">
+                    <img src="img/ale.png" alt="Alejandro Hernández">
+                </div>
+                <div class="about-info">
+                    <h3 class="about-name">Alejandro Hernández</h3>
+                    <p class="about-bio">
+                        Soy un profesional comprometido con mi trabajo, enfocado en obtener resultados a través del esfuerzo constante. Valoro el tiempo y los recursos de quienes confían en mí, por lo que mi mayor exigencia comienza conmigo mismo. Mi objetivo es siempre aportar valor con dedicación y excelencia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- GOOGLE RATING -->
+            <div class="google-rating reveal">
+                <div class="rating-badge">
+                    <i class="fa-brands fa-google"></i>
+                    <div class="rating-info">
+                        <div class="rating-stars">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5.0</span>
+                        </div>
+                        <span class="rating-count">39 reseñas en Google</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESEÑAS CARRUSEL -->
+            <div class="reviews-section reveal">
+                <h3 class="reviews-title">Lo que dicen nuestros clientes</h3>
+                <div class="carousel">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-track-wrap">
+                        <div class="carousel-track" id="carouselTrack">
+
+                            <div class="review-card active">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">L</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Lucia Moreno</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Excelente el masaje descontracturante! Me sentí muy cómoda en el lugar y me fui muy aliviada, con los días mejoró más aún. Y tuvo la empatía de darme turno a la brevedad, dado que estaba con mucho dolor. ¡Recomiendo 100%!"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">A</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Alejandra Alvez</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"La verdad no alcanzan las gracias... meses con dolor intenso, en una hora logró aliviar y siento que nuevamente tengo libertad en mis movimientos en una sola sesión. ¡Súper recomendable! 👌"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">M</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Mark Kremers</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Voy una vez a la semana a un masaje completo para relajarme y aliviar el estrés. Es genial, excepto por una cosa: el momento en que te dice que se acabó. 😁"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">D</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Damian Batto</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Totalmente recomendable. Fui por una gran contractura a nivel cervical y dorsal, con tremendo dolor, y en dos sesiones me alivió totalmente. Destaco el profesionalismo y calidez en el trato. ¡Muy recomendable!"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">L</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Lasede mm</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Fui a hacerme masajes después de una noche horrible con migraña. Alejandro me atendió con mucha dedicación, me hizo masajes en todo el cuerpo y en la nuca descubrió el origen del problema. ¡Increíble profesional!"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">L</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Lucas Garcia</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Totalmente recomendable. Alejandro, además de ser un profesional de primer nivel con su conocimiento y dedicación, es una gran persona. Siempre comprometido para el bienestar de cada uno. Muy contento."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">Z</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Zully Diaz Sosa</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"¡Excelente experiencia! Después del descontracturante me sentí relajada y aliviada. Profesionalismo, técnica y habilidad en un solo lugar. Destaco su atención al detalle y capacidad para personalizar el masaje."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">P</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Paola Sotelo</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Súper recomendable, fui con mucho dolor y luxación de hombro y en menos de 1 mes logré recuperar el brazo totalmente. Ambiente cálido y relajante."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">K</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Karin Sosa</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"¡Súper recomendable! Alejandro muy profesional y realmente salís aliviado."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">J</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Jorge Rossi</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Gran profesional, totalmente recomendable. En particular acudo a recuperación de lesiones y sesiones de masaje. Todo excelente."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">E</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Elizabeth Pagliano</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Excelente masaje, me sentí muy relajada, dormí como un osito. ¡Manos mágicas! 🙌 Gracias Ale."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">A</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Antonella Cocco</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"¡Súper recomendable! Excelente atención y servicio. Muchas gracias Ale 🙌"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">V</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Valentina Mosquera</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"Excelente servicio, muy recomendable. Técnicas actuales y conocimiento de las mismas. Ambiente agradable, limpio, música acorde que invita a relajarte por completo. Los detalles justos que marcan diferencia en un profesional. 🙌🍀"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">L</div>
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Leticia Rivero</span>
+                                        <div class="stars">★★★★★</div>
+                                    </div>
+                                </div>
+                                <p>"¡Excelente servicio! ¡Manos mágicas! Muchas gracias Alejandro."</p>
+                            </div>
+
+                        </div><!-- /carousel-track -->
+                    </div><!-- /carousel-track-wrap -->
+                    <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div><!-- /carousel -->
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div><!-- /reviews-section -->
+
+        </div>
+    </section>
+
+    <!-- ======================== CONTACTO ======================== -->
+    <section class="section" id="contacto">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Contacto</h2>
+                <p>Estamos en Las Toscas, Canelones — escribinos o llamanos</p>
+            </div>
+
+            <div class="contact-grid reveal">
+
+                <a href="tel:+59899923605" class="contact-card phone">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Llamadas</span>
+                        <span class="contact-value">099 923 605</span>
+                    </div>
+                    <span class="contact-btn">Llamar</span>
+                </a>
+
+                <a href="https://wa.me/59899923605" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp">
+                    <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">099 923 605</span>
+                    </div>
+                    <span class="contact-btn">Escribir</span>
+                </a>
+
+                <a href="https://www.instagram.com/aleentrenosok/" target="_blank" rel="noopener noreferrer" class="contact-card instagram">
+                    <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Instagram</span>
+                        <span class="contact-value">@aleentrenosok</span>
+                    </div>
+                    <span class="contact-btn">Seguir</span>
+                </a>
+
+                <div class="contact-card address">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Dirección</span>
+                        <span class="contact-value">entre B y Central, Av. 30 Metros<br>Las Toscas, Canelones</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HORARIOS -->
+            <div class="schedule-bar reveal">
+                <div class="schedule-bar-title">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Horarios de atención</span>
+                </div>
+                <div class="schedule-days">
+                    <div class="schedule-day">
+                        <span class="sday-name">Lunes</span>
+                        <span class="sday-hours">7:00 — 20:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Martes</span>
+                        <span class="sday-hours">7:00 — 20:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Miércoles</span>
+                        <span class="sday-hours">7:00 — 20:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Jueves</span>
+                        <span class="sday-hours">7:00 — 20:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Viernes</span>
+                        <span class="sday-hours">7:00 — 20:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Sábado</span>
+                        <span class="sday-hours">8:00 — 18:00</span>
+                    </div>
+                    <div class="schedule-day schedule-day--closed">
+                        <span class="sday-name">Domingo</span>
+                        <span class="sday-hours">Cerrado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAPA -->
+            <div class="map-wrap reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5!2d-55.7483944!3d-34.7600226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959ff77bad754221%3A0x19994f2a0621d489!2sMasajes%20Bienestar%20Integral!5e0!3m2!1ses!2suy!4v1748538000000"
+                    width="100%"
+                    height="380"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Masajes Bienestar Integral en Google Maps">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <img src="img/logo.png" alt="Masajes Bienestar Integral" class="footer-logo">
+            <span class="footer-name">Masajes Bienestar Integral</span>
+            <span class="footer-slogan">Tu bienestar, nuestra misión.</span>
+        </div>
+        <div class="footer-contact">
+            <span class="footer-col-title">Contacto</span>
+            <a href="tel:+59899923605"><i class="fa-solid fa-phone"></i> 099 923 605</a>
+            <a href="https://wa.me/59899923605" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.instagram.com/aleentrenosok/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> @aleentrenosok</a>
+        </div>
+        <nav class="footer-nav" aria-label="Navegación del footer">
+            <span class="footer-col-title">Navegación</span>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- ======================== WHATSAPP FAB ======================== -->
+    <a href="https://wa.me/59899923605" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
